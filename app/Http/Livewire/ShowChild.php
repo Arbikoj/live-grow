@@ -67,7 +67,8 @@ class ShowChild extends Component
             'weight' => $this->weight,
         ]);
 
-        session()->flash('message', $this->children_id ? 'children updated.' : 'children created.');
+        notify()->success($this->children_id ? 'children updated.': 'children created.');
+        // session()->flash('message', $this->children_id ? 'children updated.' : 'children created.');
         return redirect()->to('/data');
         $this->closeModalPopover();
         $this->resetCreateForm();

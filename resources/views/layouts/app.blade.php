@@ -33,6 +33,10 @@
             rel="stylesheet">
 
 
+        <!-- laravel notify -->
+        @notifyCss
+        @include('notify::components.notify')
+
         <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
             rel="stylesheet"/>
@@ -58,6 +62,7 @@
             <!-- Page Content -->
             <main>
                 {{ $slot }}
+                <x:notify-messages />
 
             </main>
         </div>
@@ -82,6 +87,9 @@
             type="text/javascript"
             src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
+        <!-- Laravel Notify -->
+        @notifyJs
+        
         <!--Datatables -->
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script

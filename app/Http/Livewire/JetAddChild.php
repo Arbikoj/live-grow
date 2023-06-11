@@ -8,6 +8,6 @@ class JetAddChild extends Component
 {
     public function render()
     {
-        return view('livewire.jet-add-child');
+        return view('livewire.jet-add-child'); 
     }
 }

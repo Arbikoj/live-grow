@@ -80,12 +80,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($children as $child) @php $dateOfBirth = $child->birth; $dateTahun
-                            =\Carbon\Carbon::parse($dateOfBirth)->diff(\Carbon\Carbon::now())->format('%y');
-                            $dateBulan
-                            =\Carbon\Carbon::parse($dateOfBirth)->diff(\Carbon\Carbon::now())->format('%m');
-                            $dateHari
-                            =\Carbon\Carbon::parse($dateOfBirth)->diff(\Carbon\Carbon::now())->format('%d');
+                            @forelse($children as $child) 
+                            @php 
+                            $dateOfBirth = $child->birth; 
+                            
+                            $dateTahun = \Carbon\Carbon::parse($dateOfBirth)->diff(\Carbon\Carbon::now())->format('%y');
+                            
+                            $dateBulan = \Carbon\Carbon::parse($dateOfBirth)->diff(\Carbon\Carbon::now())->format('%m');
+                            $dateHari = \Carbon\Carbon::parse($dateOfBirth)->diff(\Carbon\Carbon::now())->format('%d');
+                            
                             if ($dateTahun == 0 && $dateBulan != 0) { $tglLahir = $dateBulan . ' Bulan,
                             '.$dateHari.' Hari'; }elseif ($dateTahun == 0 && $dateBulan == 0) { $tglLahir =
                             $dateHari.' Hari'; }elseif ($dateBulan == 0) { $tglLahir = $dateTahun . ' Tahun,

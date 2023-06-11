@@ -1,5 +1,13 @@
+<!-- <x-slot name="header">
+    <div class="font-semibold text-xl text-gray-800 space-between">
+
+    <h2 class="text-center"></h2>
+        {{$detail->name}}
+    </div>
+</x-slot> -->
+
 <x-slot name="header">
-    <h2 class="text-center">{{$detail->name}}</h2>
+
 </x-slot>
 
 @livewire('child-history', ['childrenID' => $detail->id])

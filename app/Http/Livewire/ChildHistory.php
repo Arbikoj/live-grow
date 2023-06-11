@@ -25,7 +25,6 @@ class ChildHistory extends Component
 
     public function render(childCharts $chart)
     {
-        
         return view('livewire.child-history', ['chart' => $chart->build()]);
     }
 
@@ -71,9 +70,10 @@ class ChildHistory extends Component
         ]);
 
         // session()->flash('message', $this->children_id ? 'children updated.' : 'children created.');
-        // return redirect()->to('/show/{$childrenID}');
+        // return redirect()->to('/show/.$slug.');
         // return redirect()->action([ShowChild::class, 'render']);
-        return 'oke';
+        return redirect()->back();
+        // return 'oke';
 
     }
 

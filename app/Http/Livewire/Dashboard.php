@@ -39,6 +39,8 @@ class Dashboard extends Component
             ->Where('name','LIKE',$srcItem)
             ->paginate($this->paginate)
         ]);
+
+
     }
     public function create()
     {
@@ -76,8 +78,8 @@ class Dashboard extends Component
             'birth' => $this->birth,
             'user_id' => Auth::id(),
         ]);
+        notify()->success($this->children_id ? 'children updated.': 'children created.');
 
-        session()->flash('message', $this->children_id ? 'children updated.' : 'children created.');
         return redirect()->to('/data');
         $this->closeModalPopover();
         $this->resetCreateForm();
@@ -96,7 +98,6 @@ class Dashboard extends Component
     public function delete($id)
     {
         Child::find($id)->delete();
-        session()->flash('message', 'children deleted.');
     }
 
     public function show($id)
@@ -108,6 +109,7 @@ class Dashboard extends Component
         $this->name = $children->name;
         $this->gender = $children->gender;
         $this->birth = $children->birth;
+        
     }
 
     public function closeModal(){

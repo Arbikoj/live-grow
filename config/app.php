@@ -183,6 +183,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
 
+        // laravel notifu
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+
         /*
          * Package Service Providers...
          */

@@ -20,9 +20,9 @@
                         {{ __('Data') }}
                     </x-jet-nav-link>
 
-                    {{-- <x-jet-nav-link href="{{ route('jet-add') }}" :active="request()->routeIs('jet-add')">
-                        {{ __('Add') }}
-                    </x-jet-nav-link> --}}
+                    <x-jet-nav-link href="https://www.jotform.com/form/230990126835459" target="_blank">
+                        {{ __('Perkembangan') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -148,6 +148,14 @@
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
+        
+            <x-jet-responsive-nav-link href="{{ route('data') }}" :active="request()->routeIs('data')">
+                {{ __('Data') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="https://www.jotform.com/form/230990126835459" target="_blank">
+                {{ __('Perkembangan') }}
+            </x-jet-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -182,7 +190,7 @@
                     @csrf
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                   @click.prevent="$root.submit();">
+                                @click.prevent="$root.submit();">
                         {{ __('Log Out') }}
                     </x-jet-responsive-nav-link>
                 </form>

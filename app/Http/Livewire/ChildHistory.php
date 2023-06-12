@@ -13,7 +13,10 @@ use \App\Charts\childCharts;
 class ChildHistory extends Component
 {
     public $childrenID;
-    public function mount($childrenID)
+    public $birth;
+    public $gender;
+    public $name;
+    public function mount($childrenID, $birth, $gender, $name)
     {
         $this->history = ChildRecord::where('children_id', $childrenID)->orderBy('created_at', 'ASC')->get();
         // $price = [];

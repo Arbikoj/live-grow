@@ -95,7 +95,6 @@ class ShowChild extends Component
         $children = ChildRecord::find($id);
         $this->children_id = $id;
 
-        // $this->subcategories_id = $produk->subcategories_id;
         $this->name = $children->name;
         $this->gender = $children->gender;
         $this->birth = $children->birth;

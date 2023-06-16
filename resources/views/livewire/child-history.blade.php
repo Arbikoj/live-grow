@@ -107,6 +107,7 @@
     </div>
   </div>
     @php
+    // dipecah '2023/06/15'
     $dateTahun = \Carbon\Carbon::parse($birth)->diff(\Carbon\Carbon::now())->format('%y');            
     $dateBulan = \Carbon\Carbon::parse($birth)->diff(\Carbon\Carbon::now())->format('%m');
     $dateHari = \Carbon\Carbon::parse($birth)->diff(\Carbon\Carbon::now())->format('%d');
@@ -163,13 +164,14 @@
 
                         <?php
                         $statusWeight = "";
+                        $statusHeight = "";
                         $getThn = \Carbon\Carbon::parse($item->created_at)->diff($birth)->format('%y');            
                         $getBln = \Carbon\Carbon::parse($item->created_at)->diff($birth)->format('%m');
                         $getHari = \Carbon\Carbon::parse($item->created_at)->diff($birth)->format('%d');
 
                         $getBln = ($getThn*12) + $getBln;
                         $newLength = $item->length * 0.01;
-                        $getBmi = $item->weight / ($newLength * $newLength);
+                        $getBmi = $item->weight / ($newLength * $newLength); 
 
                         if ($gender == "Perempuan") {
                           if ($getBln == 49) {
